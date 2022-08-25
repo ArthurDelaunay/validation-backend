@@ -14,8 +14,7 @@ app.get("/", (req, res) => {
 
 // request to get one user by dynamic url
 app.get("/:slug", isSlugExist, (req, res) => {
-  const user = users.find((user) => user.slug === req.params.slug)
-  res.json(user)
+  res.json(req.user)
 })
 
 // request to post a new user
