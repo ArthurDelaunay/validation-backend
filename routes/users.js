@@ -20,8 +20,8 @@ app.get("/:slug", isSlugExist, (req, res) => {
 // request to post a new user
 app.post(
   "/",
-  body("name").isLength({ min: 4 }).withMessage("name invalid"),
-  body("password").isLength({ min: 8 }).withMessage("password invalid"),
+  body("name").isLength({ min: 4 }).withMessage("min length is 4"),
+  body("password").isLength({ min: 8 }).withMessage("min length is 8"),
   body("city").isIn(checkCities).withMessage("city invalid"),
   body("email").isEmail().withMessage("email invalid"),
   (req, res) => {
